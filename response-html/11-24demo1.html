@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style>
+    /*响应式：根据不同屏幕做出响应*/
+
+    /*1.如何检测浏览器分辨率
+    2.如何改变元素的属性
+    */
+
+    /*box-sizing:border-box 使得盒子边框包括在设置的宽度里面*/
+
+
+    div{
+    width:800px;height:300px;border:1px solid red;
+    margin:0 auto;
+    }
+
+    /*阀值*/
+    /*一个阀值表示响应两种页面*/
+    /*两个阀值表示响应三种页面*/
+    @media screen and (min-width:900px){
+        div{
+            width:100%;background:blue;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .clock{
+            width:200px;height:200px;
+            border:2px solid #000;
+            border-radius:50%;
+            margin:200px auto;
+            position: relative;
+            display:none;
+        }
+        .center{
+            width:8px;height:8px;
+            background:#000;
+            border-radius:50%;
+            position: absolute;
+            left:0;top:0;right:0;bottom:0;
+            margin:auto auto;
+        }
+        .h{
+            width:5px;height:40px;
+            background:#000;
+            border-radius:2px 2px 0px 0px;
+            position: absolute;
+            right:99px;bottom:100px;
+            transform-origin:bottom;
+        }
+        .m{
+            width:5px;height:70px;
+            background:#000;
+            border-radius:5px 5px 0px 0px;
+            position: absolute;
+            right:98px;bottom:100px;
+            transform-origin:bottom;
+        }
+        .s{
+            width:2px;height:80px;
+            background:red;
+            border-radius:2px 2px 0px 0px;
+            position: absolute;
+            right:99px;bottom:100px;
+            transform-origin:bottom;
+        }
+        .time{
+            width:250px;height:50px;
+            font-size:20px;font-weight:bold;
+            position: relative;
+            left:550px;top:200px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var clock=document.querySelectorAll(".clock")[0];
+            for(var i=0;i<60;i++){
+                var div=document.createElement("div");
+                var w;
+                var h;
+                if(i%5!=0){
+                    w=2;
+                    h=8;
+                }else{
+                    w=4;
+                    h=12;
+                }
+                div.style.cssText="width:"+w+"px;height:"+h+"px;background:#000;transform-origin:center 100px;transform:rotate("+6*i+"deg);position:absolute;top:0px;left:"+(100-w/2)+"px;";
+                clock.appendChild(div);
+            }
+            setInterval(function(){
+                var dateobj=new Date();
+                document.getElementsByTagName("span")[0].innerHTML=dateobj.getHours();
+                document.getElementsByTagName("span")[1].innerHTML=dateobj.getMinutes();
+                document.getElementsByTagName("span")[2].innerHTML=dateobj.getSeconds();
+                var clock=document.querySelectorAll(".clock")[0];
+                var s=document.querySelectorAll(".s")[0];
+                var m=document.querySelectorAll(".m")[0];
+                var h=document.querySelectorAll(".h")[0];
+                var sdeg=6*dateobj.getSeconds()+6;
+                var mdeg=6*dateobj.getMinutes()+6;
+                var hdeg=30*dateobj.getHours()+(dateobj.getMinutes()/2);
+                s.style.transform="rotate("+(sdeg-6)+"deg)";
+                m.style.transform="rotate("+(mdeg-6)+"deg)";
+                h.style.transform="rotate("+hdeg+"deg)";
+
+                clock.style.display="block";
+                setInterval(function(){
+                    s.style.transform="rotate("+sdeg+"deg)";
+                    sdeg+=6;
+                },1000)
+
+            },1000)
+
+        }
+    </script>
+</head>
+<body>
+    <div class="time">
+        北京时间：<span></span>时<span></span>分<span></span>秒
+    </div>
+    <div class="clock">
+        <div class="center"></div>
+        <div class="h"></div>
+        <div class="m"></div>
+        <div class="s"></div>
+    </div>
+
+</body>
+</html>

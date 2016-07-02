@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .menu-box{
+            width:200px;height:40px;
+            margin:100px auto;
+            border:1px solid #333;
+        }
+        .one{
+            width:200px;height:100%;
+            font-size:20px;color:#333;
+            font-weight:bold;text-align:center;
+            line-height:40px;float:left;
+            cursor:pointer;
+        }
+        .two{
+            width:200px;height:auto;
+           /* display:none;*/
+        }
+        .red{
+            background:red;
+        }
+        .blue{
+            background:blue;
+        }
+        .green{
+            background:green;
+        }
+        .yellow{
+            background:yellow;
+        }
+        .three{
+            width:200px;height:30px;
+            font-size:16px;color:#333;
+            text-align:center;line-height:30px;
+        }
+        .deg{
+            transform:rotateX(180deg);
+            transform-origin:top;
+            transform-style:preserve-3d;
+            transition:transform 2s ease;
+            backface-visibility:visible;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ones=document.getElementsByClassName("one");
+            var twos=document.getElementsByClassName("two");
+            for(var i=0;i<ones.length;i++){
+                ones[i].index=i;
+                ones[i].onmouseover=function(){
+                    for(var j=0;j<twos.length;j++){
+                        //twos[j].style.display="none";
+                        var degs=twos[j].getElementsByClassName("deg");
+                        for(var h=0;h<degs.length;h++){
+                            degs[h].style.transform="rotateX(0deg)";
+                        }
+                    }
+                    //twos[this.index].style.display="block";
+                }
+                ones[i].onmouseout=function(){
+                    for(var j=0;j<twos.length;j++){
+                        //twos[j].style.display="none";
+                        var degs=twos[j].getElementsByClassName("deg");
+                        for(var h=0;h<degs.length;h++){
+                            degs[h].style.transform="rotateX(180deg)";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu-box">
+        <div class="one">
+            menu
+            <div class="two">
+                <div class="three red">
+                    1
+                    <div class="three blue deg">
+                        2
+                        <div class="three green deg">
+                            3
+                            <div class="three yellow deg">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

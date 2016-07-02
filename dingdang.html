@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li,ul{
+            margin:0px;padding:0px;
+            list-style: none;
+        }
+        .box{
+            width:500px;height:500px;
+            border:3px solid pink;
+            margin:0 auto;
+            border-radius:20px;
+        }
+        .head{
+            width:200px;height:200px;
+            border:1px solid #000;
+            border-radius:95px;
+            margin:0 auto;
+            margin-top:40px;
+            position: relative;
+            background:linear-gradient(to right top,#0b7897,#60d8f1);
+        }
+        .face{
+            width:170px;height:130px;
+            border:1px solid #000;
+            border-radius:90px;
+            position: absolute;
+            left:15px;top:58px;
+            background:#fff;
+        }
+        .eye-1{
+            width:40px;height:50px;
+            border:1px solid #000;
+            border-radius:20px;
+            position:absolute;
+            left:45px;top:-20px;
+            background:#fff;
+        }
+        .eye-2{
+            width:40px;height:50px;
+            border:1px solid #000;
+            border-radius:20px;
+            position:absolute;
+            left:85px;top:-20px;
+            background:#fff;
+        }
+        .point-1{
+            width:6px;height:6px;
+            background:#000;
+            border-radius:50%;
+            position: absolute;
+            left:25px;bottom:8px;
+        }
+        .point-2{
+            width:6px;height:6px;
+            background:#000;
+            border-radius:50%;
+            position: absolute;
+            right:25px;bottom:8px;
+        }
+        .nose{
+            width:16px;height:16px;
+            background:red;
+            border:1px solid #000;
+            border-radius:50%;
+            position: absolute;
+            left:77px;top:25px;
+        }
+        .line-1{
+            width:1px;height:65px;
+            background:#000;
+            margin:0 auto;
+            margin-top:40px;
+        }
+        .huxu-left-1{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            left:20px;top:55px;
+        }
+        .huxu-left-2{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            left:20px;top:45px;
+            transform-origin:right;
+            transform:rotate(20deg);
+        }
+        .huxu-left-3{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            left:20px;top:65px;
+            transform-origin:right;
+            transform:rotate(-20deg);
+        }
+        .huxu-right-1{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            right:20px;top:55px;
+        }
+        .huxu-right-2{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            right:20px;top:45px;
+            transform-origin:left;
+            transform:rotate(-20deg);
+        }
+        .huxu-right-3{
+            width:40px;height:1px;
+            background:#000;
+            position: absolute;
+            right:20px;top:65px;
+            transform-origin:left;
+            transform:rotate(20deg);
+        }
+        .mouse{
+            width:100px;height:40px;
+            border:1px solid #000;
+            border-top:0px;
+            border-radius:0px 0px 50px 50px;
+            margin:-40px auto;
+        }
+        .weijin{
+            width:115px;height:12px;
+            background:red;
+            border:1px solid #000;
+            border-radius:10px;
+            margin:0 auto;
+            margin-top:-15px;
+            position: relative;
+            z-index:9;
+        }
+        .lingdang-1{
+            width:15px;height:5px;
+            border:1px solid #000;
+            border-radius:80px 80px 4px 4px;
+            background:yellow;
+            position:absolute;
+            left:50px;top:8px;
+            z-index:10;
+        }
+        .lingdang-2{
+            width:15px;height:15px;
+            background:yellow;
+            border:1px solid #000;
+            border-radius:50%;
+            position: absolute;
+            left:50px;top:10px;
+        }
+        .point-ld{
+            width:5px;height:5px;
+            background:#000;
+            border-radius:50%;
+            position: absolute;
+            left:5px;top:5px;
+        }
+        .line-ld{
+            width:2px;height:6px;
+            background:#000;
+            position:absolute;
+            left:7px;top:10px;
+        }
+        .body{
+            width:120px;height:110px;
+            border:1px solid #000;
+            border-radius:8px 8px 0px 0px;
+            border-bottom:0px;
+            margin:0 auto;
+            position:relative;
+            margin-top:-5px;
+            background:linear-gradient(to right top,#0b7897 50%,#05beec 70%);
+        }
+        .head-left{
+            width:30px;height:50px;
+            background:#0b7897;
+            position:absolute;
+            left:-20px;top:5px;
+            border:1px solid #000;
+            border-top:0px;
+            border-right:0px;
+            margin-top:-1px;
+            transform:rotate(45deg);
+        }
+        .head-right{
+            width:30px;height:50px;
+            background:#05beec;
+            position:absolute;
+            right:-20px;top:5px;
+            border:1px solid #000;
+            border-top:0px;
+            border-left:0px;
+            margin-top:-1px;
+            transform:rotate(-45deg);
+        }
+        .in-head-left{
+            width:40px;height:40px;
+            background:#fff;
+            border:1px solid #000;
+            border-radius:50%;
+            position: absolute;
+            left:-48px;top:30px;
+        }
+        .in-head-right{
+            width:40px;height:40px;
+            background:#fff;
+            border:1px solid #000;
+            border-radius:50%;
+            position: absolute;
+            right:-48px;top:30px;
+        }
+        .in-body{
+            width:100px;height:90px;
+            border:1px solid #000;
+            border-radius:90px;
+            background:#fff;
+            position:absolute;
+            left:10px;top:-10px;
+            z-index:1;
+        }
+        .koudai{
+            width:80px;height:40px;
+            border:1px solid #000;
+            position: absolute;
+            left:10px;top:40px;
+            border-radius:0px 0px 40px 40px;
+        }
+        .foot{
+            width:122px;height:20px;
+            margin:0 auto;
+            position: relative;
+        }
+
+        .in-foot-left{
+             width:62px;height:20px;
+             border:1px solid #000;
+             background:#fff;
+             border-radius:18px 12px 12px 12px;
+             position: absolute;z-index:2;
+             left:-5px;top:-3px;
+        }
+        .in-foot-right{
+            width:62px;height:20px;
+            border:1px solid #000;
+            background:#fff;
+            border-radius:12px 18px 12px 12px;
+            position: absolute;z-index:1;
+            left:65px;top:-3px;
+        }
+        .bai{
+            width:15px;height:25px;
+            background:#fff;
+            border-top:1px solid #000;
+            border-radius:50%;
+            position: absolute;
+            left:55px;top:-5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!--机器猫头-->
+        <div class="head">
+            <div class="face">
+                <div class="eye-1">
+                    <div class="point-1"></div>
+                </div>
+                <div class="eye-2">
+                    <div class="point-2"></div>
+                </div>
+                <div class="nose"></div>
+                <div class="line-1"></div>
+                <ul class="huxu-left">
+                    <li class="huxu-left-1"></li>
+                    <li class="huxu-left-2"></li>
+                    <li class="huxu-left-3"></li>
+                </ul>
+                <ul class="huxu-right">
+                    <li class="huxu-right-1"></li>
+                    <li class="huxu-right-2"></li>
+                    <li class="huxu-right-3"></li>
+                </ul>
+                <div class="mouse"></div>
+            </div>
+        </div>
+        <!--脖子-->
+        <div class="weijin">
+            <div class="lingdang-1"></div>
+            <div class="lingdang-2">
+                <div class="point-ld"></div>
+                <div class="line-ld"></div>
+            </div>
+        </div>
+        <!--body-->
+        <div class="body">
+            <div class="head-left"></div>
+            <div class="head-right"></div>
+            <div class="in-head-left"></div>
+            <div class="in-head-right"></div>
+            <div class="in-body">
+                <div class="koudai"></div>
+            </div>
+        </div>
+        <!--foot-->
+        <div class="foot">
+            <div class="bai"></div>
+            <div class="in-foot-left"></div>
+            <div class="in-foot-right"></div>
+        </div>
+
+    </div>
+</body>
+</html>

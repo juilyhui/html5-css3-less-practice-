@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="canvas.css">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="canvas.js"></script>
+    <script src="draw.js"></script>
+
+</head>
+<body>
+    <div class="box">
+        <nav>
+            <div class="menu">
+                <div class="options">
+                    文件
+                </div>
+                <ul class="son">
+                    <li>新建文件</li>
+                    <li>返回</li>
+                    <li>保存文件</li>
+                </ul>
+            </div>
+
+
+            <div class="menu">
+                <div class="options">
+                    画图
+                </div>
+                <ul class="son">
+                    <li data-role="pen">铅笔</li>
+                    <li data-role="line">线</li>
+                    <li data-role="circle">圆</li>
+                    <li data-role="rect">矩形</li>
+                </ul>
+            </div>
+
+
+            <div class="menu">
+                <div class="options">
+                    画图方式
+                </div>
+                <ul class="son">
+                    <li data-role="stroke">画线</li>
+                    <li data-role="fill">填充</li>
+                </ul>
+            </div>
+
+
+
+            <div class="menu">
+                <div class="options">
+                    线条宽度
+                </div>
+                <ul class="son">
+                    <li data-role="1">细</li>
+                    <li data-role="3">中</li>
+                    <li data-role="7">粗</li>
+                </ul>
+            </div>
+
+
+            <div class="menu">
+                <div class="options">
+                    线条颜色
+                </div>
+                <ul class="son">
+                    <input type="color">
+                </ul>
+
+            </div>
+
+            <div class="menu">
+                <div class="options">
+                    填充颜色
+
+                </div>
+                <ul class="son">
+                    <input type="color">
+                </ul>
+
+            </div>
+
+            <div class="menu">
+                <div class="options">
+                    擦除
+                </div>
+                <ul class="son">
+                    <li data-role="6">小</li>
+                    <li data-role="10">中</li>
+                    <li data-role="20">大</li>
+                </ul>
+
+            </div>
+
+            <div class="menu no">
+                <div class="options">
+                    选择
+                </div>
+            </div>
+
+            
+        </nav>
+
+        <div class="canvas">
+            <canvas>
+
+            </canvas>
+        </div>
+
+        <div class="copy">
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

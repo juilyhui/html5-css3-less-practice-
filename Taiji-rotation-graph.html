@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>响应式</title>
+    <style>
+        div{
+            width:198px;height:99px;
+            border:1px solid #000;
+            border-bottom:100px solid #000;
+            border-radius:50%;
+            position: relative;
+            transition:all 2s ease;
+        }
+        div:hover{
+            transform: rotate(360deg);
+        }
+        div:before{
+            content: "";
+            width:19px;height:19px;
+            border:40px solid #000;
+            position:absolute;top:50px;left:0;
+            background:#fff;
+            border-radius:50%;
+        }
+        div:after{
+            content: "";
+            width:19px;height:19px;
+            border:35px solid #fff;
+            position:absolute;top:50px;right:0;
+            background:#000;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            height:2000px;
+        }
+
+        .box{
+            width:500px;height:500px;
+            /*padding:30px;*/
+            border:10px solid rgba(0,0,0,0.5);
+            background-color:blue;
+            background-image: url("back(1).jpg"),url("back(2).jpg"),url("back(3).jpg");
+            background-repeat: no-repeat;
+            /*背景图片填充的位置*/
+            /*background-position: center;*/
+            /*背景的滚动方式*/
+            /*background-attachment: fixed;*/
+            /*从边框外边开始放置背景图*/
+            /*background-origin: border-box;*/
+            /*从边框内边开始放置背景图 默认的*/
+            /*background-origin: content-box;*/
+            /*从padding内部开始放置背景图*/
+            /*background-origin: padding-box;*/
+            /*让图片大的方向和容器大小相等,可能另一个方向会填不满*/
+            /*background-size:contain;*/
+            /*填满容器，可能会损失一部分图片内容*/
+            background-size:100% 100%,100% 100%,100% 100%;
+        }
+    </style>
+
+    <!--自动轮播背景图片-->
+    <script>
+        window.onload=function(){
+            var box=document.getElementsByClassName("box")[0];
+            var size=getComputedStyle(box,null).backgroundSize;
+            var arr=size.split(",");
+//            alert(arr);
+            var num=0;
+            setInterval(function(){
+                num++;
+                if(num==arr.length){
+                    num=0;
+                }else{
+                    for(var i=0;i<arr.length;i++){
+                        arr[i]="0% 0%";
+                    }
+                    arr[num]="100% 100%";
+                    var str=arr.join(",");
+                    box.style.backgroundSize=str;
+                }
+            },2000)
+        }
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;height:200px;
+
+            /*边框图片的路径*/
+            border-image-source: url("border.jpg");
+
+            /*图片边框的宽度*/
+            border-image-width:50px;
+
+            /*图片边框截取的范围 用百分比合适*/
+            border-image-slice:33.33333333%;
+
+            /*图片边框重复的样式*/
+               /*repeat 重复，并不计算*/
+               /*round 重复，计算好重复的个数*/
+               /*stretch 拉伸 把边框中间的内容拉伸*/
+            border-image-repeat: round;
+
+            /*图片边框向外偏移的距离*/
+            border-image-outset:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

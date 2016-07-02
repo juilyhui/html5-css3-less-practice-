@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <!--如何让一个元素绝对居中到父元素当中-->
+       <!--给该元素添加定位，position:fixed;top:0;bottom:0;left:0;right:0;margin:auto auto  给它的父元素也设上定位属性-->
+    <!--如何让浮动的元素撑开父元素的高度，3种方法-->
+       <!--1.给父元素加上属性 overflow:hidden-->
+       <!--2.在父元素里面的最后位置加上一个元素(必须为块元素)，让该元素有属性 clear:both-->
+       <!--3.和第二种方法大同小异，更优秀。用css3的属性 :after 在父元素里的最后插入元素-->
+    <style>
+        .box{
+            width:500px;height:auto;
+            border:1px solid red;
+        }
+        .inner{
+            width:100px;height:100px;
+            box-sizing: border-box;
+            border:1px solid green;
+            float:left;
+        }
+        .box:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+
+    </div>
+</body>
+</html>

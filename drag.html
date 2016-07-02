@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;height:200px;
+            border:1px solid red;
+
+        }
+        @keyframes rotate {
+            0%{transform:rotate(0deg)}
+            25%{transform:rotate(10deg)}
+            50%{transform:rotate(0deg)}
+            75%{transform:rotate(-10deg)}
+            100%{transform:rotate(0deg)}
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box=document.getElementsByClassName("box")[0];
+            var li=document.getElementsByTagName("li");
+        /*被拖拽的*/
+            for(var i=0;i<li.length;i++){
+                li[i].ondragstart=function(){
+                    this.style.border="1px solid red"
+                }
+                li[i].ondrag=function(){
+                    this.style.color="rgb("+parseInt(255*Math.random())+","+parseInt(255*Math.random())+","+parseInt(255*Math.random())+")"
+                }
+                li[i].ondragend=function(){
+                    this.style.border="none";
+                    this.style.color="#000";
+                    box.appendChild(this);
+                    var that=this;
+                    var o=1;
+                    var t=setInterval(function(){
+                        if(o<0){
+                            box.removeChild(that);
+                            clearInterval(t)
+                        }else{
+                            o-=0.1;
+                            that.style.opacity=o;
+                        }
+                    },100)
+                }
+            }
+            /*投放对象*/
+            box.ondragenter=function(){
+                this.style.animation="rotate 1s linear";
+            }
+            box.ondragover=function(e){
+                e.preventDefault();
+            }
+            box.ondrop=function(){
+                this.style.animation="";
+            }
+         }
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <ul>
+        <li draggable="true">01</li>
+        <li draggable="true">02</li>
+        <li draggable="true">03</li>
+        <li draggable="true">04</li>
+    </ul>
+</body>
+</html>

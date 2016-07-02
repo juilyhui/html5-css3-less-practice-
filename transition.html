@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;height:200px;
+            background:linear-gradient(#ccc,#000);
+            /*指定要过渡的属性 可传all,表示所有属性都要过渡*/
+            /*transition-property:width,height;*/
+            /*指定过渡所需时间*/
+            /*transition-duration:2s;*/
+            /*指定过渡的运动方式*/
+            /*transition-timing-function:ease;*/
+            /*指定执行过渡前延迟的时间*/
+            /*transition-delay:3s;*/
+            /*简写  可多个属性*/
+            transition:width 2s ease,height 2s ease;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            /*该选择器可传入css3的选择器格式*/
+            /*适用于所有元素的获取方式*/
+            var box=document.querySelectorAll(".box")[0];
+            box.onclick=function(){
+                box.style.width="500px";
+                box.style.height="500px";
+            }
+            /*火狐 谷歌*/
+//            box.addEventListener("transitionend",function(){
+//                alert(1);
+//            },false)
+            /*谷歌*/
+            box.addEventListener("webkitTransitionEnd",function(){
+                alert(1);//每执行一个属性弹出一次1（margin这类属性执行4次,top,left,top,bottom）
+            },false)
+        },false)
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

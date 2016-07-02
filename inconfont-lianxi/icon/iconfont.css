@@ -1,0 +1,96 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont1 {
+  font-family:"iconfont" !important;
+  font-size:160px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconfont2 {
+  font-family:"iconfont" !important;
+  font-size:80px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  cursor:pointer;
+  color:orangered;
+  position:absolute;left:80px;bottom:80px;
+}
+.iconfont3 {
+  font-family:"iconfont" !important;
+  font-size:160px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconfont4 {
+  font-family:"iconfont" !important;
+  font-size:90px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  cursor:pointer;
+  color:orangered;
+  position:absolute;left:20px;bottom:80px;
+}
+.iconfont5 {
+  font-family:"iconfont" !important;
+  font-size:160px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconfont6 {
+  font-family:"iconfont" !important;
+  font-size:80px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  cursor:pointer;
+  color:orangered;
+  position:absolute;left:80px;bottom:80px;
+}
+.icon-zhizhang0101:before { content: "\e60b"; }
+.icon-fangdajing:before { content: "\e621";}
+.icon-book:before { content: "\e60f"; }
+.icon-icon:before { content: "\e600"; }
+.icon-yemian:before { content: "\e629"; }
+.icon-chevron-right:before { content: "\e643"; }
+.icon-shezhichilun:before { content: "\e630"; }
+
+.box{
+  width:400px;height:300px;
+  margin:0 auto;
+  position:relative;
+}
+
+/*动画*/
+@keyframes one {
+  0%{transform:matrix(1 0 0 1 1000 1000);}
+  100%{transform:matrix(1 0 0 1 1500 1500);}
+}
+@keyframes two{
+  0%{transform:translate(0px,0px);}
+  25%{transform:translate(15px,10px);}
+  50%{transform:translate(30px,0px);}
+  75%{transform:translate(45px,10px);}
+  100%{transform:translate(50px,0px);}
+}
+@keyframes three {
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}

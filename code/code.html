@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/code.js"></script>
+    <script>
+        window.onload=function(){
+            var obj=document.getElementsByClassName("code")[0];
+            var newobj=new code(obj);
+            newobj.run();
+            var newobjVal=newobj.arr.join("").toLowerCase();
+            console.log(newobjVal)
+            var text=document.getElementById("text");
+            var button=document.getElementById("button");
+            button.onclick=function(){
+                console.log(text.value);
+                console.log(newobjVal);
+                if(text.value==newobjVal){
+                    alert("验证码正确！");
+                    text.value="";
+                    newobj.clear();
+                    newobj.run();
+                }else{
+                    alert("验证码输入错误！");
+                    text.value="";
+                    newobj.clear();
+                    newobj.run();
+                }
+            }
+        }
+    </script>
+    <style>
+        .box{
+            width:300px;height:300px;
+            margin:200px auto;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="code"></div>
+    <input type="text" id="text">
+    <input type="button" value="提交" id="button">
+</div>
+
+</body>
+</html>

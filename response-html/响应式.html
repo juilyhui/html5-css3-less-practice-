@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .outbox{
+            width:700px;
+            background:pink;
+            height:100px;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        .container{
+            width:100%;overflow: hidden;
+        }
+
+        .container>.row>.col-s-1{
+            width:8.3333333333%;float:left;
+        }
+        .container>.row>.col-s-2{
+            width:16.66666666666%;float:left;
+        }
+        .container>.row>.col-s-3{
+            width:25%;float:left;
+        }
+        .container>.row>.col-s-4{
+            width:33.3333333333%;float:left;
+        }
+        .container>.row>.col-s-5{
+            width:41.66666666667%;float:left;
+        }
+        .container>.row>.col-s-6{
+            width:50%;float:left;
+        }
+        .container>.row>.col-s-7{
+            width:58.3333333333%;float:left;
+        }
+        .container>.row>.col-s-8{
+            width:66.66666666666%;float:left;
+        }
+        .container>.row>.col-s-9{
+            width:75%;float:left;
+        }
+        .container>.row>.col-s-10{
+            width:83.3333333333%;float:left;
+        }
+        .container>.row>.col-s-11{
+            width:91.66666666666%;float:left;
+        }
+        .container>.row>.col-s-12{
+            width:100%;float:left;
+        }
+        @media screen and (min-width:900px){
+            .outbox{
+                width:1000px;
+                background: pink;
+                margin:0 auto;
+            }
+            .container>.row>.col-l-1{
+                width:8.3333333333%;float:left;
+            }
+            .container>.row>.col-l-2{
+                width:16.66666666666%;float:left;
+            }
+            .container>.row>.col-l-3{
+                width:25%;float:left;
+            }
+            .container>.row>.col-l-4{
+                width:33.3333333333%;float:left;
+            }
+            .container>.row>.col-l-5{
+                width:41.66666666667%;float:left;
+            }
+            .container>.row>.col-l-6{
+                width:50%;float:left;
+            }
+            .container>.row>.col-l-7{
+                width:58.3333333333%;float:left;
+            }
+            .container>.row>.col-l-8{
+                width:66.66666666666%;float:left;
+            }
+            .container>.row>.col-l-9{
+                width:75%;float:left;
+            }
+            .container>.row>.col-l-10{
+                width:83.3333333333%;float:left;
+            }
+            .container>.row>.col-l-11{
+                width:91.66666666666%;float:left;
+            }
+            .container>.row>.col-l-12{
+                width:100%;float:left;
+            }
+        }
+        .inner{
+            border:1px solid red;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outbox">
+        <div class="container">
+            <div class="row">
+                <div class="inner col-l-2 col-s-4"></div>
+                <div class="inner col-l-2 col-s-4"></div>
+                <div class="inner col-l-2 col-s-4"></div>
+                <div class="inner col-l-2 col-s-4"></div>
+                <div class="inner col-l-2 col-s-4"></div>
+                <div class="inner col-l-2 col-s-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

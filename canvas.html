@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            background:#eee;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas=document.getElementsByTagName('canvas')[0];
+            var cobj=canvas.getContext("2d");
+        /*矩形*/
+            //cobj.fillRect(0,0,100,100);
+            /*cobj.beginPath();
+            cobj.fillStyle="green";
+            cobj.rect(100,100,100,100);
+            cobj.fill();
+            cobj.closePath();
+
+            cobj.clearRect(100,100,100,100)//清空
+
+            cobj.beginPath();
+            cobj.strokeStyle="yellow";
+            cobj.lineWidth=5;
+            cobj.rect(200,200,100,100);
+            cobj.stroke();
+            cobj.closePath();*/
+
+        /*直线*/
+            /*cobj.beginPath();
+            cobj.strokeStyle="red";
+            cobj.lineWidth=10;
+            cobj.moveTo(300,300);
+            cobj.lineTo(400,300);
+            cobj.lineTo(400,400);
+            cobj.lineTo(300,400);
+            cobj.stroke();
+            cobj.closePath();
+            //cobj.stroke();*/
+
+        /*模拟画图 绘制直线*/
+            var back=document.getElementsByTagName('div')[0];
+            var arr=[];
+            canvas.onmousedown=function(e){
+                var sx=e.offsetX;
+                var sy=e.offsetY;
+                var dateobj;
+                canvas.onmousemove=function(e){
+                    var mx= e.offsetX;
+                    var my= e.offsetY;
+                    cobj.clearRect(0,0,500,500);
+                    if(arr.length!=0){
+                        cobj.putImageData(arr[arr.length-1],0,0)
+                    }
+                    cobj.beginPath();
+                    cobj.strokeStyle="#000";
+                    cobj.lineWidth=5;
+                    cobj.moveTo(sx,sy);
+                    cobj.lineTo(mx,my);
+                    cobj.stroke();
+                    cobj.closePath();
+                }
+                document.onmouseup=function(){
+                    dateobj=cobj.getImageData(0,0,canvas.width,canvas.height);
+                    arr.push(dateobj);
+                    canvas.onmousemove="null";
+                }
+
+            }
+            back.onclick=function(){
+                if(arr.length==0){
+                    alert("已经是最后一步")
+                    return;
+                }
+                cobj.clearRect(0,0,canvas.width,canvas.height);
+                arr.pop();
+                arr.pop();
+                cobj.putImageData(arr[arr.length-1],0,0)
+            }
+
+        }
+    </script>
+</head>
+<body>
+<!---->
+   <canvas width="500" height="500"></canvas>
+   <div class="back">back</div>
+</body>
+</html>

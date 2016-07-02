@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            /*通过表单中的color输入类型，控制页面中文字的颜色*/
+            var color=document.getElementById('color');
+            console.log(color);
+            color.onchange=function(){
+                var colorval=color.value;
+                document.body.style.color=colorval;
+            }
+        }
+    </script>
+</head>
+<body>
+<!--1、表单结构更自由-->
+    <!--input标签可以放在form外面，用form属性和form标签关联起来-->
+    <!--<form action="abcd" id="myform"></form>
+    <input type="text" form="myform" name="">
+    <input type="submit" value="提交" form="myform">-->
+
+    <form action="">
+<!--2、email输入类型,此类型要求输入格式正确的email地址,否则浏览器是不允许提交的,并会有一个错误信息提示-->
+        <!--必须有指定name值，否则无效-->
+<!--required类型，值不能为空，并会有一个提示。-->
+        email:<input type="email" name="email" required="required"><br>
+<!--3、url输入类型,展示的文本域要求输入格式正确的URL地址,Opera中会自动在开始处添加http://-->
+        url:<input type="url" required="required"><br>
+<!--4、日期事件相关输入类型,各个浏览器展示效果不一样-->
+        data:<input type="date"><br>
+<!--5、number输入类型,min最小值/max最大值/value当前显示的值/step每次改变的值-->
+        number:<input type="number" min="0" max="10" value="4" step="2"><br>
+<!--6、range滑块模型-->
+        range:<input type="range" min="0" max="10" value="4" step="2"><br>
+<!--7、search输入类型,表示输入的将是一个搜索关键字-->
+        <!--通过results=s可显示一个搜索小图标-->
+        search:<input type="search" results="s"><br>
+<!--8、tel输入类型,此此类型要求输入一个电话号码,但实际上它并没有特殊的验证,与text类型没什么区别-->
+        tell:<input type="tell"><br>
+<!--9、color输入类型，可让用户通过颜色选择器选择一个颜色值,并反馈到该控件的value值中-->
+        color:<input type="color" name="color" id="color"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

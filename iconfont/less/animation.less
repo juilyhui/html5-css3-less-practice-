@@ -1,0 +1,117 @@
+/*绕自身中心旋转*/
+@-moz-keyframes rotateself {
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes rotateself {
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+@-o-keyframes rotateself {
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+@-ms-keyframes rotateself {
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+/*做圆周运动，自身角度不变*/
+@r:20;//定义运动的半径
+@sd:0;//定义初始角度
+@ciclespeed:5;//定义每秒运动的角度
+@ciclenum:100;//定义要确定的位置数
+.cicle (@i:0) when (@i<=@ciclenum){
+  @every:100/@ciclenum;
+  @select:@i*@every*1%;
+  @a:@ciclespeed*@i*pi()/180;
+  @{select}{
+    transform:translate(cos(@a)*@r*1px,sin(@a)*@r*1px);
+  }
+  .cicle(@i+1);
+}
+@-webkit-keyframes radius {
+  .cicle();
+}
+@-moz-keyframes radius {
+  .cicle();
+}
+@-o-keyframes radius {
+  .cicle();
+}
+@-ms-keyframes radius {
+  .cicle();
+}
+
+//曲线运动
+@r1:40;//半径1
+@r2:20;//半径2
+@quxianspeed1:3;//角度1
+@quxianspeed2:25;//角度2
+@quxiannum:50;//需要确定位置的个数
+.quxian(@i:0) when (@i<=@quxiannum){
+  @every:100/@quxiannum;
+  @select:@i*@every*1%;
+  @a1:@quxianspeed1*@i*pi()/180;
+  @a2:@quxianspeed2*@i*pi()/180;
+  @{select}{
+    transform:translate(cos(@a1)*@r1*1px,sin(@a2)*@r2*1px);
+  }
+  .quxian(@i+1);
+}
+@-webkit-keyframes radius2 {
+  .quxian();
+}
+@-moz-keyframes radius2 {
+  .quxian();
+}
+@-o-keyframes radius2 {
+  .quxian();
+}
+@-ms-keyframes radius2 {
+  .quxian();
+}
+
+/*等待动画*/
+@waitwidth:10px;//每个小圆点的宽度
+@waitheight:10px;//每个小圆点的高度
+@waitr:30;//小圆点轨迹半径
+@waitnum:10;//小圆点个数
+
+  .wait{
+     width:@waitwidth;height:@waitheight;
+     margin:100px auto;
+     border-radius:50%;
+     /*background:red;*/
+     -webkit-animation:wait 1s linear infinite;
+     .shadowfor();
+  }
+     //循环的创建小圆点,小圆点是阴影创建出来的
+  .shadowfor(@i:1) when (@i<=@waitnum){
+     @waita:360/@waitnum*@i*pi()/180;//角度
+     @waitx:cos(@waita)*@waitr*1px;
+     @waity:sin(@waita)*@waitr*1px;
+     box-shadow+:@waitx @waity 1px rgba(0,0,0,0.3);
+     .shadowfor(@i+1)
+  }
+  @-webkit-keyframes wait {
+     .for(@i:1) when (@i<=@waitnum){
+       @every:100/@waitnum;
+       @select:@i*@every*1%;
+       @{select}{
+         .shadowfor(@j:1) when (@j<=@waitnum){
+           @waita:360/@waitnum*@j*pi()/180;//角度
+           @waitx:cos(@waita)*@waitr*1px;
+           @waity:sin(@waita)*@waitr*1px;
+           
+           box-shadow+:@waitx @waity 1px rgba(0,0,0,0.3);
+           .shadowfor(@j+1)
+         }
+         .shadowfor()
+       }
+       .for(@i+1)
+     }
+     .for();
+  }
+
+

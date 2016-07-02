@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style>
+
+        .one{
+            width:930px;height:200px;
+            background:pink;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .one div{
+            width:33.33333%;
+            height:100%;
+            float:left;
+
+        }
+        .middle{
+            width:930px;height:300px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .two{
+            width:930px;height:300px;
+            background:yellow;
+            margin:0 auto;
+            float:left;
+        }
+        .two div{
+            width:33.3333%;
+            height:50%;
+            float:left;
+        }
+        .three{
+            width:310px;height:300px;
+            background:green;
+            float:left;
+        }
+        span{
+            display:block;
+            width:100%;
+            height:25%;
+        }
+        @media screen and (min-width:1240px){
+            .one{
+                width:1240px;
+            }
+            .one div{
+                width:25%;
+            }
+            .middle{
+                width:1240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="middle">
+       <div class="two">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+       <div class="three">
+        <span>a</span>
+        <span>b</span>
+        <span>c</span>
+        <span>d</span>
+    </div>
+    </div>
+    <div class="one">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

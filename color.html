@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;height:200px;
+            border:2px solid #000;
+            /*1、线性渐变 默认渐变方向从上到下（180deg）*/
+               /*从下到上 0deg*/
+               /*0~180deg 顺时针*/
+               /*to left 到左 结束渐变*/
+               /*to left top 到左上角结束渐变，也可以写成to top left*/
+               /*在颜色后面加上百分比 表示该颜色定义的所在位置*/
+            /*background:linear-gradient(to left top,pink 20%,orange,purple);*/
+               /*重复渐变*/
+            /*background:repeating-linear-gradient(pink 10%,orange 20%,purple 30%);*/
+
+            /*2、径向渐变 默认从元素正中心开始渐变*/
+               /*与线性渐变同理*/
+               /*在半径为80px,圆心在元素左上角50px,50px的位置，该范围内渐变*/
+            /*background:radial-gradient(80px 80px at 50px 50px,pink 50%,purple);*/
+            /*在半径为80px,圆心在元素左上角50px,50px的位置，该范围内渐变*/
+            background:radial-gradient(80px 80px at 50px 50px,pink 50%,purple);
+            /*在横向半径为40px,纵向半径为80px(椭圆),圆心在元素左上角50px,50px的位置，该范围内渐变*/
+            background:radial-gradient(40px 80px at 50px 50px,pink 50%,purple);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

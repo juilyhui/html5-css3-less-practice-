@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>响应式</title>
+    <!--两种思路：1.不考虑每个盒子的宽度改变百分比
+                 2.考虑盒子宽度，设计好阀值-->
+    <style>
+        /*一般采用百分比设置宽度*/
+        /*常采用以下方式，第二种思路*/
+        .one{
+            width:400px;height:200px;
+
+            margin:0 auto;
+        }
+        .one div{
+            width:50%;height:200px;
+            background:yellow;
+            float:left;
+            margin:0px;
+        }
+        @media screen and (min-width:600px){
+           .one{
+               width:600px;
+           }
+           .one div{
+               width:33.33333%;
+           }
+        }
+        @media screen and (min-width:800px){
+            .one{
+               width:800px;
+            }
+            .one div{
+                width:20%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+   <div>1</div>
+   <div>2</div>
+   <div>3</div>
+   <div>4</div>
+   <div>5</div>
+</div>
+</body>
+</html>

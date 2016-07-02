@@ -1,0 +1,59 @@
+@fontSize:20px;
+@fontColor:#333;
+@backgroundColor:linear-gradient(#ccc,#eee);
+@borderColor:#eee;
+@activeColor: #53bcff;
+@radius:10px;
+@padding:5px;
+
+*[data-role=button]{
+  width:100%;height:auto;
+  font-size:@fontSize;color:@fontColor;
+  padding:@padding;border-radius:@radius;
+  border:1px solid @borderColor;
+  background:@backgroundColor;
+}
+*[data-role=button]:hover{
+  box-shadow:0 0 3px #68b9ff;
+}
+*[data-role=button][horizontal]{
+  width:auto;
+  display:inline-block;
+}
+
+
+
+
+
+
+#checkbox{
+  display:none;
+}
+.switch{
+  width:100px;height:30px;
+  border:1px solid #bbb;
+  border-radius:10px;
+  overflow: hidden;
+}
+.off>label{
+  margin-left:-50px;
+}
+label{
+  display:block;
+  width:150px;height:30px;
+  transition:margin 0.3s linear;
+}
+.switch>label>span{
+  float:left;
+  width:50px;height:30px;
+  text-align:center;line-height:30px;
+}
+.switch>label>span:nth-of-type(1){
+  background:#ccc;
+}
+.switch>label>span:nth-of-type(2){
+  background:red;
+}
+.switch>label>span:nth-of-type(3){
+  background:#ccc;
+}

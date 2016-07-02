@@ -1,0 +1,52 @@
+*[data-role=button] {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  color: #333;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: linear-gradient(#ccc, #eee);
+}
+*[data-role=button]:hover {
+  box-shadow: 0 0 3px #68b9ff;
+}
+*[data-role=button][horizontal] {
+  width: auto;
+  display: inline-block;
+}
+#checkbox {
+  display: none;
+}
+.switch {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.off > label {
+  margin-left: -50px;
+}
+label {
+  display: block;
+  width: 150px;
+  height: 30px;
+  transition: margin 0.3s linear;
+}
+.switch > label > span {
+  float: left;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.switch > label > span:nth-of-type(1) {
+  background: #ccc;
+}
+.switch > label > span:nth-of-type(2) {
+  background: red;
+}
+.switch > label > span:nth-of-type(3) {
+  background: #ccc;
+}

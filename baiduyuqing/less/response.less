@@ -1,0 +1,134 @@
+@import "var.less";
+
+.container{
+  &{
+    width:(@width1)-300px;
+    height:auto;
+    .clear;
+  }
+  &-fluid{
+    width:100%;
+    height:auto;
+    .clear;
+  }
+}
+.container>.row{
+  width:100%;overflow:hidden;
+}
+.container-fluid>.row{
+  width:100%;overflow:hidden;
+}
+
+.res(s);
+/*小屏隐藏*/
+.container>.row>.col-s-hid{
+  display:none;
+}
+.container-fluid>.row>.col-s-hid{
+  display:none;
+}
+
+
+
+/*响应式 函数*/
+.res (@type,@i:1) when (@i<=@cols){
+  /*固定布局*/
+  .container>.row>.col-@{type}-@{i}{
+     width:@i/@cols*100%;height:100%;
+    float:left;
+  }
+  /*流式布局*/
+  .container-fluid>.row>.col-@{type}-@{i}{
+    width:@i/@cols*100%;height:100%;
+    float:left;
+  }
+  /*改变一个位置*/
+  .container>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:-@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:-@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  /*改变多个位置*/
+  .container>.row>.col-@{type}-push-@{i}{
+    position: relative;left:@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-pull-@{i}{
+    position: relative;right:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-push-@{i}{
+    position: relative;left:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-pull-@{i}{
+    position: relative;right:@i/@cols*100%;
+  }
+
+  .res(@type,@i+1)
+}
+
+/*中屏*/
+@media screen and (min-width:@width1){
+  .container{
+    width:@width1;
+  }
+  /*中屏隐藏*/
+  .container>.row>.col-m-hid{
+    display:none;
+  }
+  .container>.row>.col-s-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-m-hid{
+    display:none;
+  }
+  .container-fluid>.row>.col-s-hid{
+    display:block;
+  }
+
+  .res(m);
+}
+/*大屏*/
+/*@media screen and (min-width:@width2){
+  .container{
+    width:@width2;
+  }
+  !*大屏隐藏*!
+  .container>.row>.col-l-hid{
+    display:none;
+  }
+  .container>.row>.col-s-hid{
+    display:block;
+  }
+  .container>.row>.col-m-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-l-hid{
+    display:none;
+  }
+  .container-fluid>.row>.col-s-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-m-hid{
+    display:block;
+  }
+
+  .res(l);
+}*/
+
+
+
+
+/*清楚浮动影响 函数*/
+.clear(){
+  &:after{
+    content: "";
+    display:block;
+    clear:both;
+  }
+}

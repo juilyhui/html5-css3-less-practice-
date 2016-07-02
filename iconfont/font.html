@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/response.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){
+            var box=$(".box");
+            box.hover(function(){
+                //获取到当前是第几个box
+                var index=$(this).index(".box");
+                if(index==0){
+                    /*第一个，圆周运动*/
+                    /*var r=20;//定义运动的半径
+                    var sd=0;//定义初始角度
+                    var ed=5;//定义每秒运动的角度
+                    t=setInterval(function(){
+                        var x=Math.cos(sd*Math.PI/180)*r;
+                        var y=Math.sin(sd*Math.PI/180)*r;
+                        $("div[icon-name='fadajing']").css("transform","translate("+x+"px,"+y+"px)")
+                        sd+=ed;
+                    },30)*/
+                    $("div[icon-name='fadajing']").css("-webkit-animation","radius 2s linear infinite")
+                }else if(index==1){
+                    /*第二个 曲线运动*/
+                    /*var r1=20;//定义运动的半径
+                    var r2=10;
+                    var sd1=0;//定义初始角度
+                    var sd2=0;
+                    var ed1=5;//定义每秒运动的角度
+                    var ed2=15;
+                    t=setInterval(function(){
+                        var x=Math.cos(sd1*Math.PI/180)*r1;
+                        var y=Math.sin(sd2*Math.PI/180)*r2;
+                        $("div[icon-name='yumao']").css("transform","translate("+x+"px,"+y+"px)")
+                        sd1+=ed1;
+                        sd2+=ed2;
+                    },30)*/
+                    $("div[icon-name='yumao']").css("-webkit-animation","radius2 2s linear infinite")
+                }else if(index==2){
+                    /*第三个，绕中心旋转*/
+                    $("div[icon-name='chilun']").css({"-moz-animation":"rotateself 1s linear infinite","-webkit-animation":"rotateself 1s linear infinite"})
+                }
+            },function(){
+                var index=$(this).index(".box");
+                if(index==0){
+                    /*clearInterval(t);
+                    $("div[icon-name='fadajing']").css("transform","translate("+0+"px,"+0+"px)")*/
+                    $("div[icon-name='fadajing']").css("-webkit-animation","")
+                }else if(index==1){
+                    /*clearInterval(t);
+                    $("div[icon-name='yumao']").css("transform","translate("+0+"px,"+0+"px)")*/
+                    $("div[icon-name='yumao']").css("-webkit-animation","")
+                }else if(index==2){
+                    $("div[icon-name='chilun']").css({"-moz-animation":"","-webkit-animation":""})
+                }
+            })
+        })
+    </script>
+    <style>
+        .container{
+            margin:0 auto;
+        }
+        .box{
+            /*border:1px solid #000;*/
+            height:250px!important;
+            position: relative;
+            cursor:pointer;
+        }
+        .s{
+            font-size:60px;
+            position:absolute;
+            right:80px;bottom:90px;
+            color:orangered;
+        }
+        .box:nth-child(2)>.s{
+            font-size:70px;
+            right:130px;bottom:100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box col-l-4 col-m-6 col-s-12">
+                <div icon-name="zizhang"></div>
+                <div icon-name="fadajing" class="s"></div>
+            </div>
+            <div class="box col-l-4 col-m-6 col-s-12">
+                <div icon-name="shu"></div>
+                <div icon-name="yumao" class="s"></div>
+            </div>
+            <div class="box col-l-4 col-m-6 col-s-12">
+                <div icon-name="yemian"></div>
+                <div icon-name="chilun" class="s"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wait"></div>
+</body>
+</html>
